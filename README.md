@@ -9,30 +9,29 @@ dedicated FAQ page on the website. It was dropped during the website redesign of
 late 2018. I have resurrected it here because many of these questions continue
 to be asked frequently.*
 
-    <h2>Table of Contents</h2>
-        <ol>
-            <li><a href="#project">The Rust Project</a></li>
-            <li><a href="#performance">Performance</a></li>
-            <li><a href="#syntax">Syntax</a></li>
-            <li><a href="#numerics">Numerics</a></li>
-            <li><a href="#strings">Strings</a></li>
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#ownership">Ownership</a></li>
-            <li><a href="#lifetimes">Lifetimes</a></li>
-            <li><a href="#generics">Generics</a></li>
-            <li><a href="#input-output">Input / Output</a></li>
-            <li><a href="#error-handling">Error Handling</a></li>
-            <li><a href="#concurrency">Concurrency</a></li>
-            <li><a href="#macros">Macros</a></li>
-            <li><a href="#debugging">Debugging and Tooling</a></li>
-            <li><a href="#low-level">Low-Level</a></li>
-            <li><a href="#cross-platform">Cross-Platform</a></li>
-            <li><a href="#modules-and-crates">Modules and Crates</a></li>
-            <li><a href="#libraries">Libraries</a></li>
-            <li><a href="#design-patterns">Design Patterns</a></li>
-            <li><a href="#other-languages">Other Languages</a></li>
-            <li><a href="#documentation">Documentation</a></li>
-        </ol>
+## Table of Contents
+
+- [The Rust Project](#the-rust-project)
+- [Performance](#performance)
+- [Syntax](#syntax)
+- [Numerics](#numerics)
+- [Strings](#strings)
+- [Collections](#collections)
+- [Ownership](#ownership)
+- [Lifetimes](#lifetimes)
+- [Generics](#generics)
+- [Input / Output](#input--output)
+- [Error Handling](#error-handling)
+- [Concurrency](#concurrency)
+- [Macros](#macros)
+- [Debugging and Tooling](#debugging-and-tooling)
+- [Low-Level](#low-level)
+- [Cross-Platform](#cross-platform)
+- [Modules and Crates](#modules-and-crates)
+- [Libraries](#libraries)
+- [Design Patterns](#design-patterns)
+- [Other Languages](#other-languages)
+- [Documentation](#documentation)
 
 
 <h2>The Rust Project</h2>
