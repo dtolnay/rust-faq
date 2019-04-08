@@ -656,7 +656,7 @@ Rust doesn't currently have support for higher-kinded types because it hasn't be
 
 ### What do named type parameters like `<T=Foo>` in generic types mean?
 
-These are called [associated types](https://doc.rust-lang.org/stable/book/ch19-03-advanced-traits.html#specifying-placeholder-types-in-trait-definitions-with-associated-types), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
+These are called [associated types](https://doc.rust-lang.org/book/ch19-03-advanced-traits.html#specifying-placeholder-types-in-trait-definitions-with-associated-types), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
 
 Associated types exist because generics often involve families of types, where one type determines all of the others in a family. For example, a trait for graphs might have as its `Self` type the graph itself, and have associated types for nodes and for edges. Each graph type uniquely determines the associated types. Using associated types makes it much more concise to work with these families of types, and also provides better type inference in many cases.
 
@@ -768,7 +768,7 @@ If you're looking for something more powerful, there are a [number of options on
 
 Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, and they interoperate poorly with multithreaded code (a major focus of Rust).
 
-Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/ch09-00-error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
+Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/book/ch09-00-error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
 
 ### What's the deal with `unwrap()` everywhere?
 
@@ -906,7 +906,7 @@ There are a number of possible answers, but a common mistake is not realizing th
 
 There are also `self` and `super`, which disambiguate `use` paths as being relative to the current module or parent module, respectively.
 
-For complete information on `use`ing libraries, read the Rust book's chapter ["Packages, Crates, and Modules"](https://doc.rust-lang.org/stable/book/ch07-00-packages-crates-and-modules.html).
+For complete information on `use`ing libraries, read the Rust book's chapter ["Packages, Crates, and Modules"](https://doc.rust-lang.org/book/ch07-00-packages-crates-and-modules.html).
 
 ### Why do I have to declare module files with `mod` at the top level of the crate, instead of just `use`ing them?
 
@@ -1193,7 +1193,7 @@ Rust was designed from day one to be a safe systems programming language, which 
 
 ### How do I do the equivalent of C++ template specialization in Rust?
 
-Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rust/issues/31844) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/stable/book/ch19-03-advanced-traits.html).
+Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rust/issues/31844) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/book/ch19-03-advanced-traits.html).
 
 ### How does Rust's ownership system relate to move semantics in C++?
 
@@ -1323,93 +1323,93 @@ You can report issues in the Rust documentation on the Rust compiler [issue trac
 
 When you use `cargo doc` to generate documentation for your own project, it also generates docs for the active dependency versions. These are put into the `target/doc` directory of your project. Use `cargo doc --open` to open the docs after building them, or just open up `target/doc/index.html` yourself.
 
-[Vec]: https://doc.rust-lang.org/stable/std/vec/struct.Vec.html
-[HashMap]: https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html
-[Into]: https://doc.rust-lang.org/stable/std/convert/trait.Into.html
-[From]: https://doc.rust-lang.org/stable/std/convert/trait.From.html
-[Eq]: https://doc.rust-lang.org/stable/std/cmp/trait.Eq.html
-[PartialEq]: https://doc.rust-lang.org/stable/std/cmp/trait.PartialEq.html
-[Ord]: https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html
-[PartialOrd]: https://doc.rust-lang.org/stable/std/cmp/trait.PartialOrd.html
-[f32]: https://doc.rust-lang.org/stable/std/primitive.f32.html
-[f64]: https://doc.rust-lang.org/stable/std/primitive.f64.html
-[i32]: https://doc.rust-lang.org/stable/std/primitive.i32.html
-[i64]: https://doc.rust-lang.org/stable/std/primitive.i64.html
-[bool]: https://doc.rust-lang.org/stable/std/primitive.bool.html
-[Hash]: https://doc.rust-lang.org/stable/std/hash/trait.Hash.html
-[BTreeMap]: https://doc.rust-lang.org/stable/std/collections/struct.BTreeMap.html
-[VecMacro]: https://doc.rust-lang.org/stable/std/macro.vec!.html
-[String]: https://doc.rust-lang.org/stable/std/string/struct.String.html
-[to_string]: https://doc.rust-lang.org/stable/std/string/trait.ToString.html#tymethod.to_string
-[str]: https://doc.rust-lang.org/stable/std/primitive.str.html
-[str__find]: https://doc.rust-lang.org/stable/std/primitive.str.html#method.find
-[str__as_bytes]: https://doc.rust-lang.org/stable/std/primitive.str.html#method.as_bytes
-[u8]: https://doc.rust-lang.org/stable/std/primitive.u8.html
-[char]: https://doc.rust-lang.org/stable/std/primitive.char.html
-[Weak]: https://doc.rust-lang.org/stable/std/rc/struct.Weak.html
-[IntoIterator]: https://doc.rust-lang.org/stable/std/iter/trait.IntoIterator.html
-[Rc]: https://doc.rust-lang.org/stable/std/rc/struct.Rc.html
-[UnsafeCell]: https://doc.rust-lang.org/stable/std/cell/struct.UnsafeCell.html
-[Copy]: https://doc.rust-lang.org/stable/std/marker/trait.Copy.html
-[Clone]: https://doc.rust-lang.org/stable/std/clone/trait.Clone.html
-[Cell]: https://doc.rust-lang.org/stable/std/cell/struct.Cell.html
-[RefCell]: https://doc.rust-lang.org/stable/std/cell/struct.RefCell.html
-[Cow]: https://doc.rust-lang.org/stable/std/borrow/enum.Cow.html
-[Deref]: https://doc.rust-lang.org/stable/std/ops/trait.Deref.html
-[Arc]: https://doc.rust-lang.org/stable/std/sync/struct.Arc.html
-[Box]: https://doc.rust-lang.org/stable/std/boxed/struct.Box.html
-[Option]: https://doc.rust-lang.org/stable/std/option/enum.Option.html
-[Fn]: https://doc.rust-lang.org/stable/std/ops/trait.Fn.html
-[FnMut]: https://doc.rust-lang.org/stable/std/ops/trait.FnMut.html
-[FnOnce]: https://doc.rust-lang.org/stable/std/ops/trait.FnOnce.html
-[Result]: https://doc.rust-lang.org/stable/std/result/enum.Result.html
-[RandomState]: https://doc.rust-lang.org/stable/std/collections/hash_map/struct.RandomState.html
-[Add]: https://doc.rust-lang.org/stable/std/ops/trait.Add.html
-[AddAssign]: https://doc.rust-lang.org/stable/std/ops/trait.AddAssign.html
-[Sub]: https://doc.rust-lang.org/stable/std/ops/trait.Sub.html
-[SubAssign]: https://doc.rust-lang.org/stable/std/ops/trait.SubAssign.html
-[Mul]: https://doc.rust-lang.org/stable/std/ops/trait.Mul.html
-[MulAssign]: https://doc.rust-lang.org/stable/std/ops/trait.MulAssign.html
-[Div]: https://doc.rust-lang.org/stable/std/ops/trait.Div.html
-[DivAssign]: https://doc.rust-lang.org/stable/std/ops/trait.DivAssign.html
-[Neg]: https://doc.rust-lang.org/stable/std/ops/trait.Neg.html
-[Rem]: https://doc.rust-lang.org/stable/std/ops/trait.Rem.html
-[RemAssign]: https://doc.rust-lang.org/stable/std/ops/trait.RemAssign.html
-[BitAnd]: https://doc.rust-lang.org/stable/std/ops/trait.BitAnd.html
-[BitAndAssign]: https://doc.rust-lang.org/stable/std/ops/trait.BitAndAssign.html
-[BitOr]: https://doc.rust-lang.org/stable/std/ops/trait.BitOr.html
-[BitOrAssign]: https://doc.rust-lang.org/stable/std/ops/trait.BitOrAssign.html
-[BitXor]: https://doc.rust-lang.org/stable/std/ops/trait.BitXor.html
-[BitXorAssign]: https://doc.rust-lang.org/stable/std/ops/trait.BitXorAssign.html
-[Not]: https://doc.rust-lang.org/stable/std/ops/trait.Not.html
-[Shl]: https://doc.rust-lang.org/stable/std/ops/trait.Shl.html
-[ShlAssign]: https://doc.rust-lang.org/stable/std/ops/trait.ShlAssign.html
-[Shr]: https://doc.rust-lang.org/stable/std/ops/trait.Shr.html
-[ShrAssign]: https://doc.rust-lang.org/stable/std/ops/trait.ShrAssign.html
-[Deref]: https://doc.rust-lang.org/stable/std/ops/trait.Deref.html
-[DerefMut]: https://doc.rust-lang.org/stable/std/ops/trait.DerefMut.html
-[Index]: https://doc.rust-lang.org/stable/std/ops/trait.Index.html
-[IndexMut]: https://doc.rust-lang.org/stable/std/ops/trait.IndexMut.html
-[read__read_to_string]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_string
-[Read]: https://doc.rust-lang.org/stable/std/io/trait.Read.html
-[std-io]: https://doc.rust-lang.org/stable/std/io/index.html
-[File]: https://doc.rust-lang.org/stable/std/fs/struct.File.html
-[read__read]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#tymethod.read
-[read__read_to_end]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.read_to_end
-[read__bytes]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.bytes
-[read__chars]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.chars
-[read__take]: https://doc.rust-lang.org/stable/std/io/trait.Read.html#method.take
-[BufReader]: https://doc.rust-lang.org/stable/std/io/struct.BufReader.html
-[Args]: https://doc.rust-lang.org/stable/std/env/struct.Args.html
-[TryMacro]: https://doc.rust-lang.org/stable/std/macro.try!.html
-[unwrap]: https://doc.rust-lang.org/stable/core/option/enum.Option.html#method.unwrap
-[Mutex]: https://doc.rust-lang.org/stable/std/sync/struct.Mutex.html
-[AtomicUsize]: https://doc.rust-lang.org/stable/std/sync/atomic/struct.AtomicUsize.html
-[Sync]: https://doc.rust-lang.org/stable/std/marker/trait.Sync.html
-[Drop]: https://doc.rust-lang.org/stable/std/ops/trait.Drop.html
-[clone_from_slice]: https://doc.rust-lang.org/stable/std/primitive.slice.html#method.clone_from_slice
-[copy]: https://doc.rust-lang.org/stable/std/ptr/fn.copy.html
-[copy_nonoverlapping]: https://doc.rust-lang.org/stable/std/ptr/fn.copy_nonoverlapping.html
-[clone]: https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone
+[Vec]: https://doc.rust-lang.org/std/vec/struct.Vec.html
+[HashMap]: https://doc.rust-lang.org/std/collections/struct.HashMap.html
+[Into]: https://doc.rust-lang.org/std/convert/trait.Into.html
+[From]: https://doc.rust-lang.org/std/convert/trait.From.html
+[Eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
+[PartialEq]: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
+[Ord]: https://doc.rust-lang.org/std/cmp/trait.Ord.html
+[PartialOrd]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
+[f32]: https://doc.rust-lang.org/std/primitive.f32.html
+[f64]: https://doc.rust-lang.org/std/primitive.f64.html
+[i32]: https://doc.rust-lang.org/std/primitive.i32.html
+[i64]: https://doc.rust-lang.org/std/primitive.i64.html
+[bool]: https://doc.rust-lang.org/std/primitive.bool.html
+[Hash]: https://doc.rust-lang.org/std/hash/trait.Hash.html
+[BTreeMap]: https://doc.rust-lang.org/std/collections/struct.BTreeMap.html
+[VecMacro]: https://doc.rust-lang.org/std/macro.vec!.html
+[String]: https://doc.rust-lang.org/std/string/struct.String.html
+[to_string]: https://doc.rust-lang.org/std/string/trait.ToString.html#tymethod.to_string
+[str]: https://doc.rust-lang.org/std/primitive.str.html
+[str__find]: https://doc.rust-lang.org/std/primitive.str.html#method.find
+[str__as_bytes]: https://doc.rust-lang.org/std/primitive.str.html#method.as_bytes
+[u8]: https://doc.rust-lang.org/std/primitive.u8.html
+[char]: https://doc.rust-lang.org/std/primitive.char.html
+[Weak]: https://doc.rust-lang.org/std/rc/struct.Weak.html
+[IntoIterator]: https://doc.rust-lang.org/std/iter/trait.IntoIterator.html
+[Rc]: https://doc.rust-lang.org/std/rc/struct.Rc.html
+[UnsafeCell]: https://doc.rust-lang.org/std/cell/struct.UnsafeCell.html
+[Copy]: https://doc.rust-lang.org/std/marker/trait.Copy.html
+[Clone]: https://doc.rust-lang.org/std/clone/trait.Clone.html
+[Cell]: https://doc.rust-lang.org/std/cell/struct.Cell.html
+[RefCell]: https://doc.rust-lang.org/std/cell/struct.RefCell.html
+[Cow]: https://doc.rust-lang.org/std/borrow/enum.Cow.html
+[Deref]: https://doc.rust-lang.org/std/ops/trait.Deref.html
+[Arc]: https://doc.rust-lang.org/std/sync/struct.Arc.html
+[Box]: https://doc.rust-lang.org/std/boxed/struct.Box.html
+[Option]: https://doc.rust-lang.org/std/option/enum.Option.html
+[Fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
+[FnMut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
+[FnOnce]: https://doc.rust-lang.org/std/ops/trait.FnOnce.html
+[Result]: https://doc.rust-lang.org/std/result/enum.Result.html
+[RandomState]: https://doc.rust-lang.org/std/collections/hash_map/struct.RandomState.html
+[Add]: https://doc.rust-lang.org/std/ops/trait.Add.html
+[AddAssign]: https://doc.rust-lang.org/std/ops/trait.AddAssign.html
+[Sub]: https://doc.rust-lang.org/std/ops/trait.Sub.html
+[SubAssign]: https://doc.rust-lang.org/std/ops/trait.SubAssign.html
+[Mul]: https://doc.rust-lang.org/std/ops/trait.Mul.html
+[MulAssign]: https://doc.rust-lang.org/std/ops/trait.MulAssign.html
+[Div]: https://doc.rust-lang.org/std/ops/trait.Div.html
+[DivAssign]: https://doc.rust-lang.org/std/ops/trait.DivAssign.html
+[Neg]: https://doc.rust-lang.org/std/ops/trait.Neg.html
+[Rem]: https://doc.rust-lang.org/std/ops/trait.Rem.html
+[RemAssign]: https://doc.rust-lang.org/std/ops/trait.RemAssign.html
+[BitAnd]: https://doc.rust-lang.org/std/ops/trait.BitAnd.html
+[BitAndAssign]: https://doc.rust-lang.org/std/ops/trait.BitAndAssign.html
+[BitOr]: https://doc.rust-lang.org/std/ops/trait.BitOr.html
+[BitOrAssign]: https://doc.rust-lang.org/std/ops/trait.BitOrAssign.html
+[BitXor]: https://doc.rust-lang.org/std/ops/trait.BitXor.html
+[BitXorAssign]: https://doc.rust-lang.org/std/ops/trait.BitXorAssign.html
+[Not]: https://doc.rust-lang.org/std/ops/trait.Not.html
+[Shl]: https://doc.rust-lang.org/std/ops/trait.Shl.html
+[ShlAssign]: https://doc.rust-lang.org/std/ops/trait.ShlAssign.html
+[Shr]: https://doc.rust-lang.org/std/ops/trait.Shr.html
+[ShrAssign]: https://doc.rust-lang.org/std/ops/trait.ShrAssign.html
+[Deref]: https://doc.rust-lang.org/std/ops/trait.Deref.html
+[DerefMut]: https://doc.rust-lang.org/std/ops/trait.DerefMut.html
+[Index]: https://doc.rust-lang.org/std/ops/trait.Index.html
+[IndexMut]: https://doc.rust-lang.org/std/ops/trait.IndexMut.html
+[read__read_to_string]: https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_string
+[Read]: https://doc.rust-lang.org/std/io/trait.Read.html
+[std-io]: https://doc.rust-lang.org/std/io/index.html
+[File]: https://doc.rust-lang.org/std/fs/struct.File.html
+[read__read]: https://doc.rust-lang.org/std/io/trait.Read.html#tymethod.read
+[read__read_to_end]: https://doc.rust-lang.org/std/io/trait.Read.html#method.read_to_end
+[read__bytes]: https://doc.rust-lang.org/std/io/trait.Read.html#method.bytes
+[read__chars]: https://doc.rust-lang.org/std/io/trait.Read.html#method.chars
+[read__take]: https://doc.rust-lang.org/std/io/trait.Read.html#method.take
+[BufReader]: https://doc.rust-lang.org/std/io/struct.BufReader.html
+[Args]: https://doc.rust-lang.org/std/env/struct.Args.html
+[TryMacro]: https://doc.rust-lang.org/std/macro.try!.html
+[unwrap]: https://doc.rust-lang.org/core/option/enum.Option.html#method.unwrap
+[Mutex]: https://doc.rust-lang.org/std/sync/struct.Mutex.html
+[AtomicUsize]: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicUsize.html
+[Sync]: https://doc.rust-lang.org/std/marker/trait.Sync.html
+[Drop]: https://doc.rust-lang.org/std/ops/trait.Drop.html
+[clone_from_slice]: https://doc.rust-lang.org/std/primitive.slice.html#method.clone_from_slice
+[copy]: https://doc.rust-lang.org/std/ptr/fn.copy.html
+[copy_nonoverlapping]: https://doc.rust-lang.org/std/ptr/fn.copy_nonoverlapping.html
+[clone]: https://doc.rust-lang.org/std/clone/trait.Clone.html#tymethod.clone
 
 <!-- vim: set textwidth=0: -->
