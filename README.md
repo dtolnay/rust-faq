@@ -1408,3 +1408,5 @@ When you use `cargo doc` to generate documentation for your own project, it also
 [copy]: https://doc.rust-lang.org/stable/std/ptr/fn.copy.html
 [copy_nonoverlapping]: https://doc.rust-lang.org/stable/std/ptr/fn.copy_nonoverlapping.html
 [clone]: https://doc.rust-lang.org/stable/std/clone/trait.Clone.html#tymethod.clone
+
+<!-- vim: set textwidth=0: -->
