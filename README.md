@@ -945,7 +945,7 @@ Note the difference between `mod` and `use`: `mod` declares that a module exists
 
 ### How do I configure Cargo to use a proxy?
 
-As explained on the Cargo [configuration documentation](http://doc.crates.io/config.html), you can set Cargo to use a proxy by setting the "proxy" variable under `[http]` in the configuration file.
+As explained on the Cargo [configuration documentation](https://doc.rust-lang.org/cargo/reference/config.html), you can set Cargo to use a proxy by setting the "proxy" variable under `[http]` in the configuration file.
 
 ### Why can't the compiler find the method implementation even though I'm already `use`ing the crate?
 
