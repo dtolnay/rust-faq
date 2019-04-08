@@ -677,33 +677,35 @@ impl Add for Foo {
 
 The following operators can be overloaded:
 
-| Operation  | Trait                          |
-|:-----------|:-------------------------------|
-| `+`        | [`Add`][Add]                   |
-| `+=`       | [`AddAssign`][AddAssign]       |
-| `binary -` | [`Sub`][Sub]                   |
-| `-=`       | [`SubAssign`][SubAssign]       |
-| `*`        | [`Mul`][Mul]                   |
-| `*=`       | [`MulAssign`][MulAssign]       |
-| `/`        | [`Div`][Div]                   |
-| `/=`       | [`DivAssign`][DivAssign]       |
-| `unary -`  | [`Neg`][Neg]                   |
-| `%`        | [`Rem`][Rem]                   |
-| `%=`       | [`RemAssign`][RemAssign]       |
-| `&`        | [`BitAnd`][BitAnd]             |
-| `|`        | [`BitOr`][BitOr]               |
-| `|=`       | [`BitOrAssign`][BitOrAssign]   |
-| `^`        | [`BitXor`][BitXor]             |
-| `^=`       | [`BitXorAssign`][BitXorAssign] |
-| `!`        | [`Not`][Not]                   |
-| `<<`       | [`Shl`][Shl]                   |
-| `<<=`      | [`ShlAssign`][ShlAssign]       |
-| `>>`       | [`Shr`][Shr]                   |
-| `>>=`      | [`ShrAssign`][ShrAssign]       |
-| `*`        | [`Deref`][Deref]               |
-| `mut *`    | [`DerefMut`][DerefMut]         |
-| `[]`       | [`Index`][Index]               |
-| `mut []`   | [`IndexMut`][IndexMut]         |
+| Operation            | Trait                          |
+|:---------------------|:-------------------------------|
+| `+`                  | [`Add`][Add]                   |
+| `+=`                 | [`AddAssign`][AddAssign]       |
+| `binary -`           | [`Sub`][Sub]                   |
+| `-=`                 | [`SubAssign`][SubAssign]       |
+| `*`                  | [`Mul`][Mul]                   |
+| `*=`                 | [`MulAssign`][MulAssign]       |
+| `/`                  | [`Div`][Div]                   |
+| `/=`                 | [`DivAssign`][DivAssign]       |
+| `unary -`            | [`Neg`][Neg]                   |
+| `%`                  | [`Rem`][Rem]                   |
+| `%=`                 | [`RemAssign`][RemAssign]       |
+| `&`                  | [`BitAnd`][BitAnd]             |
+| <code>&#124;</code>  | [`BitOr`][BitOr]               |
+| <code>&#124;=</code> | [`BitOrAssign`][BitOrAssign]   |
+| `^`                  | [`BitXor`][BitXor]             |
+| `^=`                 | [`BitXorAssign`][BitXorAssign] |
+| `!`                  | [`Not`][Not]                   |
+| `<<`                 | [`Shl`][Shl]                   |
+| `<<=`                | [`ShlAssign`][ShlAssign]       |
+| `>>`                 | [`Shr`][Shr]                   |
+| `>>=`                | [`ShrAssign`][ShrAssign]       |
+| `*`                  | [`Deref`][Deref]               |
+| `mut *`              | [`DerefMut`][DerefMut]         |
+| `[]`                 | [`Index`][Index]               |
+| `mut []`             | [`IndexMut`][IndexMut]         |
+
+<!-- Note: GitHub markdown treats pipe as column separator even in backticks -->
 
 ### Why the split between `Eq`/`PartialEq` and `Ord`/`PartialOrd`?
 
