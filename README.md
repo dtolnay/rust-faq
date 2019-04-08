@@ -550,7 +550,7 @@ The most common sorts of deref coercions are:
 
 ### Why lifetimes?
 
-Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without the performance costs of garbage collection. They are based on a variety of academic work, which can be found in the [Rust book](https://doc.rust-lang.org/stable/book/first-edition/bibliography.html#type-system).
+Lifetimes are Rust's answer to the question of memory safety. They allow Rust to ensure memory safety without the performance costs of garbage collection. They are based on a variety of academic work.
 
 ### Why is the lifetime syntax the way it is?
 
