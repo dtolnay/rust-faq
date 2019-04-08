@@ -906,7 +906,7 @@ There are a number of possible answers, but a common mistake is not realizing th
 
 There are also `self` and `super`, which disambiguate `use` paths as being relative to the current module or parent module, respectively.
 
-For complete information on `use`ing libraries, read the Rust book's chapter ["Crates and Modules"](https://doc.rust-lang.org/stable/book/second-edition/ch07-00-modules.html).
+For complete information on `use`ing libraries, read the Rust book's chapter ["Packages, Crates, and Modules"](https://doc.rust-lang.org/stable/book/ch07-00-packages-crates-and-modules.html).
 
 ### Why do I have to declare module files with `mod` at the top level of the crate, instead of just `use`ing them?
 
