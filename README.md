@@ -77,7 +77,7 @@ The two biggest open source Rust projects right now are [Servo](https://github.c
 
 ### Who else is using Rust?
 
-[A growing number of organizations!](friends.html)
+[A growing number of organizations!](https://www.rust-lang.org/production/users)
 
 ### How can I try Rust easily?
 
