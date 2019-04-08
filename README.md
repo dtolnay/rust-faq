@@ -512,7 +512,7 @@ The second step is to become familiar with the ownership and mutability-related 
 
 The single most important part of understanding the borrow checker is practice. Rust's strong static analyses guarantees are strict and quite different from what many programmers have worked with before. It will take some time to become completely comfortable with everything.
 
-If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](community.html) for help.
+If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](https://www.rust-lang.org/community) for help.
 
 ### When is `Rc` useful?
 
