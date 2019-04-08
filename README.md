@@ -978,7 +978,7 @@ Import dynamic libraries in Rust with [libloading](https://crates.io/crates/libl
 
 ### Why doesn't crates.io have namespaces?
 
-Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-package-policies/1041) of [https://crates.io](https://crates.io)'s design:
+Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-package-policies/1041) of crates.io's design:
 
 > In the first month with crates.io, a number of people have asked us about the possibility of introducing [namespaced packages](https://github.com/rust-lang/crates.io/issues/58).<br><br>
 >
