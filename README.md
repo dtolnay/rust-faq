@@ -628,7 +628,7 @@ based on the parameter types of calls to that function (or uses of the structure
 
 During monomorphisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
 
-Functions that accept [trait objects](https://doc.rust-lang.org/book/trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
+Functions that accept [trait objects](https://doc.rust-lang.org/book/ch17-02-trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
 
 ### What's the difference between a function and a closure that doesn't capture any variables?
 
