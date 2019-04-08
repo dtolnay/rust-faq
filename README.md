@@ -445,7 +445,7 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 
 ### How can I implement a graph or other data structure that contains cycles?
 
-There are at least four options (discussed at length in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/)):
+There are at least four options (discussed at length in [Too Many Linked Lists][book-too-many-lists]):
 
 - You can implement it using [`Rc`][Rc] and [`Weak`][Weak] to allow shared ownership of nodes,
 although this approach pays the cost of memory management.
