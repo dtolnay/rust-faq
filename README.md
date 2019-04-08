@@ -820,7 +820,7 @@ This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in cli
 
 ### What IDE should I use?
 
-There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://forge.rust-lang.org/ides.html).
+There are a number of options for development environment with Rust, all of which are detailed on the unofficial [IDE support page](https://areweideyet.com/).
 
 ### `gofmt` is great. Where's `rustfmt`?
 
