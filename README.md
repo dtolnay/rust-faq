@@ -594,7 +594,7 @@ it explicitly. The rules are as follows:
 2. Within a function *signature* (for example, in the types of its
    arguments, or its return type), you *may* have to write a lifetime
    explicitly. Lifetimes there use a simple defaulting scheme called
-   ["lifetime elision"](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision),
+   ["lifetime elision"](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#lifetime-elision),
    which consists of the following three rules:
 
    - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
