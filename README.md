@@ -824,7 +824,7 @@ There are a number of options for development environment with Rust, all of whic
 
 ### `gofmt` is great. Where's `rustfmt`?
 
-`rustfmt` is [right here](https://github.com/rust-lang-nursery/rustfmt), and is being actively developed to make reading Rust code as easy and predictable as possible.
+`rustfmt` is [right here](https://github.com/rust-lang/rustfmt), and is being actively developed to make reading Rust code as easy and predictable as possible.
 
 <br><br>
 
