@@ -5,7 +5,7 @@ This page exists to answer common questions about the Rust programming language.
 </p>
 
 <p class="faq-intro">
-If there is some common or important question you feel is wrongly left unanswered here, feel free to <a href="https://github.com/rust-lang/rust-www/blob/master/CONTRIBUTING.md">help us fix it</a>.
+If there is some common or important question you feel is wrongly left unanswered here, please open a GitHub issue against this repository!
 </p>
 
 <div id="toc">
