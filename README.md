@@ -768,7 +768,7 @@ If you're looking for something more powerful, there are a [number of options on
 
 Exceptions complicate understanding of control-flow, they express validity/invalidity outside of the type system, and they interoperate poorly with multithreaded code (a major focus of Rust).
 
-Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/second-edition/ch09-00-error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
+Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/ch09-00-error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
 
 ### What's the deal with `unwrap()` everywhere?
 
