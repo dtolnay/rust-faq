@@ -177,7 +177,7 @@ Thirdly, Rust's use of LLVM for code generation is a double-edged sword: while i
 
 Finally, while Rust's preferred strategy of monomorphising generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies. Rust programmers can use trait objects to trade away this code bloat by using dynamic dispatch instead.
 
-### Why are Rust's <code>HashMap</code>s slow?
+### Why are Rust's `HashMap`s slow?
 
 By default, Rust's [`HashMap`][HashMap] uses the [SipHash](https://131002.net/siphash/) hashing algorithm, which is designed to prevent [hash table collision attacks](http://programmingisterrible.com/post/40620375793/hash-table-denial-of-service-attacks-revisited) while providing [reasonable performance on a variety of workloads](https://www.reddit.com/r/rust/comments/3hw9zf/rust_hasher_comparisons/cub4oh6).
 
@@ -203,7 +203,7 @@ Use of curly brackets to denote blocks is a common design choice in a variety of
 
 Curly brackets also allow for more flexible syntax for the programmer and a simpler parser in the compiler.
 
-### I can leave out parentheses on <code>if</code> conditions, so why do I have to put curly brackets around single line blocks? Why is the C style not allowed?
+### I can leave out parentheses on `if` conditions, so why do I have to put curly brackets around single line blocks? Why is the C style not allowed?
 
 Whereas C requires mandatory parentheses for `if`-statement conditionals but leaves curly brackets optional, Rust makes the opposite choice for its `if`-expressions. This keeps the conditional clearly separate from the body and avoids the hazard of optional curly brackets, which can lead to easy-to-miss errors during refactoring, like Apple's [goto fail](https://gotofail.com/) bug.
 
@@ -243,7 +243,7 @@ In Rust, declarations tend to come with explicit types, while actual code has it
 - Signatures improve code comprehension for the programmer, eliminating the need for an IDE running an inference algorithm across an entire crate to be able to guess at a function's argument types; it's always explicit and nearby.
 - Mechanically, it simplifies the inference algorithm, as inference only requires looking at one function at a time.
 
-### Why does <code>match</code> have to be exhaustive?
+### Why does `match` have to be exhaustive?
 
 To aid in refactoring and clarity.
 
@@ -262,7 +262,7 @@ match val.do_something() {
 
 ## Numerics
 
-### Which of <code>f32</code> and <code>f64</code> should I prefer for floating-point math?
+### Which of `f32` and `f64` should I prefer for floating-point math?
 
 The choice of which to use is dependent on the purpose of the program.
 
@@ -270,7 +270,7 @@ If you are interested in the greatest degree of precision with your floating poi
 
 If in doubt, choose [`f64`][f64] for the greater precision.
 
-### Why can't I compare floats or use them as <code>HashMap</code> or <code>BTreeMap</code> keys?
+### Why can't I compare floats or use them as `HashMap` or `BTreeMap` keys?
 
 Floats can be compared with the `==`, `!=`, `<`, `<=`, `>`, and `>=` operators, and with the `partial_cmp()` function. `==` and `!=` are part of the [`PartialEq`][PartialEq] trait, while `<`, `<=`, `>`, `>=`, and `partial_cmp()` are part of the [`PartialOrd`][PartialOrd] trait.
 
@@ -293,7 +293,7 @@ Preincrement and postincrement (and the decrement equivalents), while convenient
 
 ## Strings
 
-### How can I convert a <code>String</code> or <code>Vec&lt;T&gt;</code> to a slice (<code>&amp;str</code> and <code>&amp;[T]</code>)?
+### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
 Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
 Using [Deref coercions](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
@@ -302,7 +302,7 @@ Methods implemented on `&str` and `&[T]` can be accessed directly on `String` an
 
 In some cases, such as generic code, it's necessary to convert manually. Manual conversions can be achieved using the slicing operator, like so: `&my_vec[..]`.
 
-### How can I convert from <code>&amp;str</code> to <code>String</code> or the other way around?
+### How can I convert from `&str` to `String` or the other way around?
 
 The [`to_string()`][to_string] method converts from a [`&str`][str] into a [`String`][String], and [`String`s][String] are automatically converted into [`&str`][str] when you borrow a reference to them. Both are demonstrated in the following example:
 
@@ -323,7 +323,7 @@ fn say_hello(name: &str) {
 
 [`&str`][str] is a primitive type implemented by the Rust language, while [`String`][String] is implemented in the standard library.
 
-### How do I do O(1) character access in a <code>String</code>?
+### How do I do O(1) character access in a `String`?
 
 You cannot. At least not without a firm understanding of what you mean by "character", and preprocessing the string to find the index of the desired character.
 
@@ -358,7 +358,7 @@ Rust has four pairs of string types, [each serving a distinct purpose](http://ww
 
 Rust's different string types serve different purposes. `String` and `str` are UTF-8 encoded general-purpose strings. `OsString` and `OsStr` are encoded according to the current platform, and are used when interacting with the operating system. `CString` and `CStr` are the Rust equivalent of strings in C, and are used in FFI code, and `PathBuf` and `Path` are convenience wrappers around `OsString` and `OsStr`, providing methods specific to path manipulation.
 
-### How can I write a function that accepts both <code>&str</code> and <code>String</code>?
+### How can I write a function that accepts both `&str` and `String`?
 
 There are several options, depending on the needs of the function:
 
@@ -483,7 +483,7 @@ If the moved value is of your own custom type, consider implementing [`Copy`][Co
 
 If none of these are possible, you may want to modify the function that acquired ownership to return ownership of the value when the function exits.
 
-### What are the rules for using <code>self</code>, <code>&amp;self</code>, or <code>&amp;mut self</code> in a method declaration?
+### What are the rules for using `self`, `&self`, or `&mut self` in a method declaration?
 
 - Use `self` when a function needs to consume the value
 - Use `&self` when a function only needs a read-only reference to the value
@@ -508,7 +508,7 @@ The single most important part of understanding the borrow checker is practice. 
 
 If you find yourself struggling with the borrow checker, or running out of patience, always feel free to reach out to the [Rust community](community.html) for help.
 
-### When is <code>Rc</code> useful?
+### When is `Rc` useful?
 
 This is covered in the official documentation for [`Rc`][Rc], Rust's non-atomically reference-counted pointer type. In short, [`Rc`][Rc] and its thread-safe cousin [`Arc`][Arc] are useful to express shared ownership, and have the system automatically deallocate the associated memory when no one has access to it.
 
@@ -575,7 +575,7 @@ fn happy_birthday(name: &str, age: i64) -> String {
 
 This approach is simpler, but often results in unnecessary allocations.
 
-### Why do some references have lifetimes, like <code>&amp;'a T</code>, and some do not, like <code>&amp;T</code>?
+### Why do some references have lifetimes, like `&'a T`, and some do not, like `&T`?
 
 In fact, *all* reference types have a lifetime, but most of the time you do not have to write
 it explicitly. The rules are as follows:
@@ -602,7 +602,7 @@ If these rules result in compilation errors, the Rust compiler will provide an e
 
 The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an existing value of type `Foo` that the reference points to. The reference "borrows" the original value for a given region of code (the lifetime of the reference), and the value being borrowed from cannot be moved or destroyed for the duration of the borrow.
 
-### How do I express the absence of a value without <code>null</code>?
+### How do I express the absence of a value without `null`?
 
 You can do that with the [`Option`][Option] type, which can either be `Some(T)` or `None`. `Some(T)` indicates that a value of type `T` is contained within, while `None` indicates the absence of a value.
 
@@ -641,7 +641,7 @@ Another common example is concepts like functors or monads, both of which are ty
 
 Rust doesn't currently have support for higher-kinded types because it hasn't been a priority compared to other improvements we want to make. Since the design is a major, cross-cutting change, we also want to approach it carefully. But there's no inherent reason for the current lack of support.
 
-### What do named type parameters like <code>&lt;T=Foo&gt;</code> in generic types mean?
+### What do named type parameters like `<T=Foo>` in generic types mean?
 
 These are called [associated types](https://doc.rust-lang.org/stable/book/second-edition/ch19-03-advanced-traits.html), and they allow for the expression of trait bounds that can't be expressed with a `where` clause. For example, a generic bound `X: Bar<T=Foo>` means "`X` must implement the trait `Bar`, and in that implementation of `Bar`, `X` must choose `Foo` for `Bar`'s associated type, `T`." Examples of where such a constraint cannot be expressed via a `where` clause include trait objects like `Box<Bar<T=Foo>>`.
 
@@ -667,35 +667,35 @@ impl Add for Foo {
 
 The following operators can be overloaded:
 
-| Operation            | Trait                          |
-|:---------------------|:-------------------------------|
-| `+`                  | [`Add`][Add]                   |
-| `+=`                 | [`AddAssign`][AddAssign]       |
-| `binary -`           | [`Sub`][Sub]                   |
-| `-=`                 | [`SubAssign`][SubAssign]       |
-| `*`                  | [`Mul`][Mul]                   |
-| `*=`                 | [`MulAssign`][MulAssign]       |
-| `/`                  | [`Div`][Div]                   |
-| `/=`                 | [`DivAssign`][DivAssign]       |
-| `unary -`            | [`Neg`][Neg]                   |
-| `%`                  | [`Rem`][Rem]                   |
-| `%=`                 | [`RemAssign`][RemAssign]       |
-| `&`                  | [`BitAnd`][BitAnd]             |
-| <code>&#124;</code>  | [`BitOr`][BitOr]               |
-| <code>&#124;</code>= | [`BitOrAssign`][BitOrAssign]   |
-| `^`                  | [`BitXor`][BitXor]             |
-| `^=`                 | [`BitXorAssign`][BitXorAssign] |
-| `!`                  | [`Not`][Not]                   |
-| `<<`                 | [`Shl`][Shl]                   |
-| `<<=`                | [`ShlAssign`][ShlAssign]       |
-| `>>`                 | [`Shr`][Shr]                   |
-| `>>=`                | [`ShrAssign`][ShrAssign]       |
-| `*`                  | [`Deref`][Deref]               |
-| `mut *`              | [`DerefMut`][DerefMut]         |
-| `[]`                 | [`Index`][Index]               |
-| `mut []`             | [`IndexMut`][IndexMut]         |
+| Operation  | Trait                          |
+|:-----------|:-------------------------------|
+| `+`        | [`Add`][Add]                   |
+| `+=`       | [`AddAssign`][AddAssign]       |
+| `binary -` | [`Sub`][Sub]                   |
+| `-=`       | [`SubAssign`][SubAssign]       |
+| `*`        | [`Mul`][Mul]                   |
+| `*=`       | [`MulAssign`][MulAssign]       |
+| `/`        | [`Div`][Div]                   |
+| `/=`       | [`DivAssign`][DivAssign]       |
+| `unary -`  | [`Neg`][Neg]                   |
+| `%`        | [`Rem`][Rem]                   |
+| `%=`       | [`RemAssign`][RemAssign]       |
+| `&`        | [`BitAnd`][BitAnd]             |
+| `|`        | [`BitOr`][BitOr]               |
+| `|=`       | [`BitOrAssign`][BitOrAssign]   |
+| `^`        | [`BitXor`][BitXor]             |
+| `^=`       | [`BitXorAssign`][BitXorAssign] |
+| `!`        | [`Not`][Not]                   |
+| `<<`       | [`Shl`][Shl]                   |
+| `<<=`      | [`ShlAssign`][ShlAssign]       |
+| `>>`       | [`Shr`][Shr]                   |
+| `>>=`      | [`ShrAssign`][ShrAssign]       |
+| `*`        | [`Deref`][Deref]               |
+| `mut *`    | [`DerefMut`][DerefMut]         |
+| `[]`       | [`Index`][Index]               |
+| `mut []`   | [`IndexMut`][IndexMut]         |
 
-### Why the split between <code>Eq</code>/<code>PartialEq</code> and <code>Ord</code>/<code>PartialOrd</code>?
+### Why the split between `Eq`/`PartialEq` and `Ord`/`PartialOrd`?
 
 There are some types in Rust whose values are only partially ordered, or have only partial equality. Partial ordering means that there may be values of the given type that are neither less than nor greater than each other. Partial equality means that there may be values of the given type that are not equal to themselves.
 
@@ -705,7 +705,7 @@ As explained in [the earlier question on floats](#why-cant-i-compare-floats), th
 
 ## Input / Output
 
-### How do I read a file into a <code>String</code>?
+### How do I read a file into a `String`?
 
 Using the [`read_to_string()`][read__read_to_string] method, which is defined on the [`Read`][Read] trait in [`std::io`][std-io].
 
@@ -751,7 +751,7 @@ Exceptions complicate understanding of control-flow, they express validity/inval
 
 Rust prefers a type-based approach to error handling, which is [covered at length in the book](https://doc.rust-lang.org/stable/book/second-edition/ch09-00-error-handling.html). This fits more nicely with Rust's control flow, concurrency, and everything else.
 
-### What's the deal with <code>unwrap()</code> everywhere?
+### What's the deal with `unwrap()` everywhere?
 
 `unwrap()` is a function that extracts the value inside an [`Option`][Option] or [`Result`][Result] and panics if no value is present.
 
@@ -759,11 +759,11 @@ Rust prefers a type-based approach to error handling, which is [covered at lengt
 
 It's also useful for quick prototypes where you don't want to handle an error yet, or blog posts where error handling would distract from the main point.
 
-### Why do I get an error when I try to run example code that uses the <code>try!</code> macro?
+### Why do I get an error when I try to run example code that uses the `try!` macro?
 
 It's probably an issue with the function's return type. The [`try!`][TryMacro] macro either extracts the value from a [`Result`][Result], or returns early with the error [`Result`][Result] is carrying. This means that [`try`][TryMacro] only works for functions that return [`Result`][Result] themselves, where the `Err`-constructed type implements `From::from(err)`. In particular, this means that the [`try!`][TryMacro] macro cannot work inside the `main` function.
 
-### Is there an easier way to do error handling than having <code>Result</code>s everywhere?
+### Is there an easier way to do error handling than having `Result`s everywhere?
 
 If you're looking for a way to avoid handling [`Result`s][Result] in other people's code, there's always [`unwrap()`][unwrap], but it's probably not what you want. [`Result`][Result] is an indicator that some computation may or may not complete successfully. Requiring you to handle these failures explicitly is one of the ways that Rust encourages robustness. Rust provides tools like the [`try!` macro][TryMacro] to make handling failures ergonomic.
 
@@ -771,7 +771,7 @@ If you really don't want to handle an error, use [`unwrap()`][unwrap], but know 
 
 ## Concurrency
 
-### Can I use static values across threads without an <code>unsafe</code> block?
+### Can I use static values across threads without an `unsafe` block?
 
 Mutation is safe if it's synchronized. Mutating a static [`Mutex`][Mutex] (lazily initialized via the [lazy-static](https://crates.io/crates/lazy_static/) crate) does not require an `unsafe` block, nor does mutating a static [`AtomicUsize`][AtomicUsize] (which can be initialized without lazy_static).
 
@@ -789,7 +789,7 @@ Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki
 
 Rust programs can be debugged using [gdb](https://sourceware.org/gdb/current/onlinedocs/gdb/) or [lldb](http://lldb.llvm.org/tutorial.html), the same as C and C++. In fact, every Rust installation comes with one or both of rust-gdb and rust-lldb (depending on platform support). These are wrappers over gdb and lldb with Rust pretty-printing enabled.
 
-### <code>rustc</code> said a panic occurred in standard library code. How do I locate the mistake in my code?
+### `rustc` said a panic occurred in standard library code. How do I locate the mistake in my code?
 
 This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in client code. Enabling backtraces by setting the environment variable `RUST_BACKTRACE=1` helps with getting more information. Compiling in debug mode (the default for `cargo build`) is also helpful. Using a debugger like the provided `rust-gdb` or `rust-lldb` is also helpful.
 
@@ -797,13 +797,13 @@ This error is usually caused by [`unwrap()`ing][unwrap] a `None` or `Err` in cli
 
 There are a number of options for development environment with Rust, all of which are detailed on the official [IDE support page](https://forge.rust-lang.org/ides.html).
 
-### <code>gofmt</code> is great. Where's <code>rustfmt</code>?
+### `gofmt` is great. Where's `rustfmt`?
 
 `rustfmt` is [right here](https://github.com/rust-lang-nursery/rustfmt), and is being actively developed to make reading Rust code as easy and predictable as possible.
 
 ## Low-Level
 
-### How do I <code>memcpy</code> bytes?
+### How do I `memcpy` bytes?
 
 If you want to clone an existing slice safely, you can use [`clone_from_slice`][clone_from_slice].
 
@@ -817,7 +817,7 @@ Absolutely. Rust programs can be set to not load the standard library using the 
 
 Yes! In fact there are [several projects underway doing just that](http://wiki.osdev.org/Rust).
 
-### How can I read or write numeric types like <code>i32</code> or <code>f64</code> in big-endian or little-endian format in a file or other byte stream?
+### How can I read or write numeric types like `i32` or `f64` in big-endian or little-endian format in a file or other byte stream?
 
 You should check out the [byteorder crate](http://burntsushi.net/rustdoc/byteorder/), which provides utilities for exactly that.
 
@@ -881,7 +881,7 @@ Rust does distribute [copies of the standard library](https://static.rust-lang.o
 - A crate contains an implicit, un-named top-level module.
 - Recursive definitions can span modules, but not crates.
 
-### Why can't the Rust compiler find this library I'm <code>use</code>ing?
+### Why can't the Rust compiler find this library I'm `use`ing?
 
 There are a number of possible answers, but a common mistake is not realizing that `use` declarations are relative to the crate root. Try rewriting your declarations to use the paths they would use if defined in the root file of your project and see if that fixes the problem.
 
@@ -889,7 +889,7 @@ There are also `self` and `super`, which disambiguate `use` paths as being relat
 
 For complete information on `use`ing libraries, read the Rust book's chapter ["Crates and Modules"](https://doc.rust-lang.org/stable/book/second-edition/ch07-00-modules.html).
 
-### Why do I have to declare module files with <code>mod</code> at the top level of the crate, instead of just <code>use</code>ing them?
+### Why do I have to declare module files with `mod` at the top level of the crate, instead of just `use`ing them?
 
 There are two ways to declare modules in Rust, inline or in another file. Here is an example of each:
 
@@ -928,11 +928,11 @@ Note the difference between `mod` and `use`: `mod` declares that a module exists
 
 As explained on the Cargo [configuration documentation](http://doc.crates.io/config.html), you can set Cargo to use a proxy by setting the "proxy" variable under `[http]` in the configuration file.
 
-### Why can't the compiler find the method implementation even though I'm already <code>use</code>ing the crate?
+### Why can't the compiler find the method implementation even though I'm already `use`ing the crate?
 
 For methods defined on a trait, you have to explicitly import the trait declaration. This means it's not enough to import a module where a struct implements the trait, you must also import the trait itself.
 
-### Why can't the compiler infer <code>use</code> declarations for me?
+### Why can't the compiler infer `use` declarations for me?
 
 It probably could, but you also don't want it to. While in many cases it is likely that the compiler could determine the correct module to import by simply looking for where a given identifier is defined, this may not be the case in general. Any decision rule in `rustc` for choosing between competing options would likely cause surprise and confusion in some cases, and Rust prefers to be explicit about where names are coming from.
 
@@ -1060,7 +1060,7 @@ You can approximate non-constant-expression globals with the [lazy-static](https
 
 ## Other Languages
 
-### How can I implement something like C's <code>struct X { static int X; };</code> in Rust?
+### How can I implement something like C's `struct X { static int X; };` in Rust?
 
 Rust does not have `static` fields as shown in the code snippet above. Instead, you can declare a `static` variable in a given module, which is kept private to that module.
 
