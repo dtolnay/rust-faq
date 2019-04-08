@@ -300,7 +300,7 @@ Preincrement and postincrement (and the decrement equivalents), while convenient
 ### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
 Usually, you can pass a reference to a `String` or `Vec<T>` wherever a slice is expected.
-Using [Deref coercions](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
+Using [Deref coercions](https://doc.rust-lang.org/book/ch15-02-deref.html), [`String`s][String] and [`Vec`s][Vec] will automatically coerce to their respective slices when passed by reference with `&` or `& mut`.
 
 Methods implemented on `&str` and `&[T]` can be accessed directly on `String` and `Vec<T>`. For example, `some_string.trim()` will work even though `trim` is a method on `&str` and `some_string` is a `String`.
 
@@ -497,7 +497,7 @@ If none of these are possible, you may want to modify the function that acquired
 
 ### How can I understand the borrow checker?
 
-The borrow checker applies only a few rules, which can be found in the Rust book's [section on borrowing](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html), when evaluating Rust code. These rules are:
+The borrow checker applies only a few rules, which can be found in the Rust book's [section on borrowing](https://doc.rust-lang.org/book/ch15-02-deref.html), when evaluating Rust code. These rules are:
 
 > First, any borrow must last for a scope no greater than that of the owner. Second, you may have one or the other of these two kinds of borrows, but not both at the same time:
 >
@@ -524,13 +524,13 @@ To return a closure from a function, it must be a "move closure", meaning that t
 
 ### What is a deref coercion and how does it work?
 
-A [deref coercion](https://doc.rust-lang.org/book/deref-coercions.html) is a handy coercion
+A [deref coercion](https://doc.rust-lang.org/book/ch15-02-deref.html) is a handy coercion
 that automatically converts references to pointers (e.g., `&Rc<T>` or `&Box<T>`) into references
 to their contents (e.g., `&T`). Deref coercions exist to make using Rust more ergonomic, and are implemented via the [`Deref`][Deref] trait.
 
 A Deref implementation indicates that the implementing type may be converted into a target by a call to the `deref` method, which takes an immutable reference to the calling type and returns a reference (of the same lifetime) to the target type. The `*` prefix operator is shorthand for the `deref` method.
 
-They're called "coercions" because of the following rule, quoted here [from the Rust book](https://doc.rust-lang.org/stable/book/second-edition/ch15-02-deref.html):
+They're called "coercions" because of the following rule, quoted here [from the Rust book](https://doc.rust-lang.org/book/ch15-02-deref.html):
 
 > If you have a type `U`, and it implements `Deref<Target=T>`, values of `&U` will automatically coerce to a `&T`.
 
