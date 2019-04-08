@@ -1007,7 +1007,7 @@ There are a variety of ways to write GUI applications in Rust. Just check out [t
 
 ### How can I parse JSON/XML?
 
-[Serde](https://github.com/serde-rs/serde) is the recommended library for serialization and deserialization of Rust data to and from a number of different formats.
+[Serde](https://serde.rs) is the recommended library for serialization and deserialization of Rust data to and from a number of different formats.
 
 ### Is there a standard 2D+ vector and shape crate?
 
