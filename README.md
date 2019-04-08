@@ -35,7 +35,7 @@ to be asked frequently.*
         </ol>
 
 
-<h2 id="project">The Rust Project</h2>
+<h2>The Rust Project</h2>
 
 <h3>What is this project's goal?</h3>
 
@@ -126,7 +126,7 @@ The Apache license includes important protection against patent aggression, but 
 
 This is partly due to preference of the original developer (Graydon), and partly due to the fact that languages tend to have a wider audience and more diverse set of possible embeddings and end-uses than products such as web browsers. We'd like to appeal to as many of those potential contributors as possible.
 
-<h2 id="performance">Performance</h2>
+<h2>Performance</h2>
 
 <h3>How fast is Rust?</h3>
 
@@ -196,7 +196,7 @@ Not generally, no. Tail-call optimization may be done in [limited circumstances]
 
 Not in the typical sense used by languages such as Java, but parts of the Rust standard library can be considered a "runtime", providing a heap, backtraces, unwinding, and stack guards. There is a [small amount of initialization code](https://github.com/rust-lang/rust/blob/33916307780495fe311fe9c080b330d266f35bfb/src/libstd/rt.rs#L43) that runs before the user's `main` function. The Rust standard library additionally links to the C standard library, which does similar [runtime initialization](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html). Rust code can be compiled without the standard library, in which case the runtime is roughly equivalent to C's.
 
-<h2 id="syntax">Syntax</h2>
+<h2>Syntax</h2>
 
 <h3>Why curly brackets? Why can't Rust's syntax be like Haskell's or Python's?</h3>
 
@@ -261,7 +261,7 @@ match val.do_something() {
 }
 ```
 
-<h2 id="numerics">Numerics</h2>
+<h2>Numerics</h2>
 
 <h3>Which of <code>f32</code> and <code>f64</code> should I prefer for floating-point math?</h3>
 
@@ -292,7 +292,7 @@ There are two ways: the `as` keyword, which does simple casting for primitive ty
 
 Preincrement and postincrement (and the decrement equivalents), while convenient, are also fairly complex. They require knowledge of evaluation order, and often lead to subtle bugs and undefined behavior in C and C++. `x = x + 1` or `x += 1` is only slightly longer, but unambiguous.
 
-<h2 id="strings">Strings</h2>
+<h2>Strings</h2>
 
 <h3>How can I convert a <code>String</code> or <code>Vec&lt;T&gt;</code> to a slice (<code>&amp;str</code> and <code>&amp;[T]</code>)?</h3>
 
@@ -399,7 +399,7 @@ fn accepts_cow(s: Cow<str>) {
 ```
 
 
-<h2 id="collections">Collections</h2>
+<h2>Collections</h2>
 
 <h3>Can I implement data structures like vectors and linked lists efficiently in Rust?</h3>
 
@@ -433,7 +433,7 @@ You don't necessarily have to. If you're declaring an array directly, the size i
 
 One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
 
-<h2 id="ownership">Ownership</h2>
+<h2>Ownership</h2>
 
 <h3>How can I implement a graph or other data structure that contains cycles?</h3>
 
@@ -539,7 +539,7 @@ The most common sorts of deref coercions are:
 - `&Vec<T>` to `&[T]`
 - `&String` to `&str`
 
-<h2 id="lifetimes">Lifetimes</h2>
+<h2>Lifetimes</h2>
 
 <h3>Why lifetimes?</h3>
 
@@ -607,7 +607,7 @@ The only way to construct a value of type `&Foo` or `&mut Foo` is to specify an 
 
 You can do that with the [`Option`][Option] type, which can either be `Some(T)` or `None`. `Some(T)` indicates that a value of type `T` is contained within, while `None` indicates the absence of a value.
 
-<h2 id="generics">Generics</h2>
+<h2>Generics</h2>
 
 <h3>What is "monomorphisation"?</h3>
 
@@ -704,7 +704,7 @@ Floating point types ([`f32`][f32] and [`f64`][f64]) are good examples of each. 
 
 As explained in [the earlier question on floats](#why-cant-i-compare-floats), these distinctions are important because some collections rely on total orderings/equality in order to give correct results.
 
-<h2 id="input-output">Input / Output</h2>
+<h2>Input / Output</h2>
 
 <h3>How do I read a file into a <code>String</code>?</h3>
 
@@ -744,7 +744,7 @@ The easiest way is to use [`Args`][Args], which provides an iterator over the in
 
 If you're looking for something more powerful, there are a [number of options on crates.io](https://crates.io/keywords/argument).
 
-<h2 id="error-handling">Error Handling</h2>
+<h2>Error Handling</h2>
 
 <h3>Why doesn't Rust have exceptions?</h3>
 
@@ -770,7 +770,7 @@ If you're looking for a way to avoid handling [`Result`s][Result] in other peopl
 
 If you really don't want to handle an error, use [`unwrap()`][unwrap], but know that doing so means that the code panics on failure, which usually results in a shutting down the process.
 
-<h2 id="concurrency">Concurrency</h2>
+<h2>Concurrency</h2>
 
 <h3>Can I use static values across threads without an <code>unsafe</code> block?</h3>
 
@@ -778,13 +778,13 @@ Mutation is safe if it's synchronized. Mutating a static [`Mutex`][Mutex] (lazil
 
 More generally, if a type implements [`Sync`][Sync] and does not implement [`Drop`][Drop], it [can be used in a `static`](https://doc.rust-lang.org/book/const-and-static.html#static).
 
-<h2 id="macros">Macros</h2>
+<h2>Macros</h2>
 
 <h3>Can I write a macro to generate identifiers?</h3>
 
 Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki/Hygienic_macro), which intentionally avoid capturing or creating identifiers that may cause unexpected collisions with other identifiers. Their capabilities are significantly different than the style of macros commonly associated with the C preprocessor. Macro invocations can only appear in places where they are explicitly supported: items, method declarations, statements, expressions, and patterns. Here, "method declarations" means a blank space where a method can be put. They can't be used to complete a partial method declaration. By the same logic, they can't be used to complete a partial variable declaration.
 
-<h2 id="debugging">Debugging and Tooling</h2>
+<h2>Debugging and Tooling</h2>
 
 <h3>How do I debug Rust programs?</h3>
 
@@ -802,7 +802,7 @@ There are a number of options for development environment with Rust, all of whic
 
 `rustfmt` is [right here](https://github.com/rust-lang-nursery/rustfmt), and is being actively developed to make reading Rust code as easy and predictable as possible.
 
-<h2 id="low-level">Low-Level</h2>
+<h2>Low-Level</h2>
 
 <h3>How do I <code>memcpy</code> bytes?</h3>
 
@@ -837,7 +837,7 @@ enum CLike {
 
 The `#[repr(C)]` attribute can be applied to such `enums` to give them the same representation they would have in equivalent C code. This allows using Rust `enum`s in FFI code where C `enum`s are also used, for most use cases. The attribute can also be applied to `struct`s to get the same layout as a C `struct` would.
 
-<h2 id="cross-platform">Cross-Platform</h2>
+<h2>Cross-Platform</h2>
 
 <!--
 ### How do I build a Windows binary that doesn't display the console window?
@@ -873,7 +873,7 @@ Cross compilation is possible in Rust, but it requires [a bit of work](https://g
 
 Rust does distribute [copies of the standard library](https://static.rust-lang.org/dist/index.html) for each of the supported platforms, which are contained in the `rust-std-*` files for each of the build directories found on the distribution page, but there are not yet automated ways to install them.
 
-<h2 id="modules-and-crates">Modules and Crates</h2>
+<h2>Modules and Crates</h2>
 
 <h3>What is the relationship between a module and a crate?</h3>
 
@@ -978,7 +978,7 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 >
 > Because namespaces are strictly more complicated in a number of ways, and because they can be added compatibly in the future should they become necessary, we're going to stick with a single shared namespace.
 
-<h2 id="libraries">Libraries</h2>
+<h2>Libraries</h2>
 
 <h3>How can I make an HTTP request?</h3>
 
@@ -1007,7 +1007,7 @@ Not yet! Want to write one?
 
 Yes you can! The major game programming library for Rust is [Piston](http://www.piston.rs/), and there's both a [subreddit for game programming in Rust](https://www.reddit.com/r/rust_gamedev/) and an IRC channel (`#rust-gamedev` on [Mozilla IRC](https://wiki.mozilla.org/IRC))  as well.
 
-<h2 id="design-patterns">Design Patterns</h2>
+<h2>Design Patterns</h2>
 
 <h3>Is Rust object oriented?</h3>
 
@@ -1059,7 +1059,7 @@ See the [C++ FQA](http://yosefk.com/c++fqa/ctors.html#fqa-10.12) about the "stat
 
 You can approximate non-constant-expression globals with the [lazy-static](https://crates.io/crates/lazy_static/) crate.
 
-<h2 id="other-languages">Other Languages</h2>
+<h2>Other Languages</h2>
 
 <h3>How can I implement something like C's <code>struct X { static int X; };</code> in Rust?</h3>
 
@@ -1303,7 +1303,7 @@ Some specific difference between Haskell typeclasses and Rust traits include:
 - Rust's `impl` resolution considers the relevant `where` clauses and trait bounds when deciding whether two `impl`s overlap, or choosing between potential `impl`s. Haskell only considers the constraints in the `instance` declaration, disregarding any constraints provided elsewhere.
 - A subset of Rust's traits (the ["object safe"](https://github.com/rust-lang/rfcs/blob/master/text/0255-object-safety.md) ones) can be used for dynamic dispatch via trait objects. The same feature is available in Haskell via GHC's `ExistentialQuantification`.
 
-<h2 id="documentation">Documentation</h2>
+<h2>Documentation</h2>
 
 <h3>Why are so many Rust answers on Stack Overflow wrong?</h3>
 
