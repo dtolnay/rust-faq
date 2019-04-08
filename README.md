@@ -1,4 +1,4 @@
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 This page exists to answer common questions about the Rust programming language. It is not a complete guide to the language, nor is it a tool for teaching the language. It is a reference to answer oft-repeated questions people in the Rust community encounter, and to clarify the reasoning behind some of Rust's design decisions.
 
@@ -37,7 +37,7 @@ to be asked frequently.*
 
 <br><br>
 
-## The Rust Project
+# The Rust Project
 
 ### What is this project's goal?
 
@@ -124,7 +124,7 @@ This is partly due to preference of the original developer (Graydon), and partly
 
 <br><br>
 
-## Performance
+# Performance
 
 ### How fast is Rust?
 
@@ -196,7 +196,7 @@ Not in the typical sense used by languages such as Java, but parts of the Rust s
 
 <br><br>
 
-## Syntax
+# Syntax
 
 ### Why curly brackets? Why can't Rust's syntax be like Haskell's or Python's?
 
@@ -263,7 +263,7 @@ match val.do_something() {
 
 <br><br>
 
-## Numerics
+# Numerics
 
 ### Which of `f32` and `f64` should I prefer for floating-point math?
 
@@ -295,7 +295,7 @@ Preincrement and postincrement (and the decrement equivalents), while convenient
 
 <br><br>
 
-## Strings
+# Strings
 
 ### How can I convert a `String` or `Vec<T>` to a slice (`&str` and `&[T]`)?
 
@@ -403,7 +403,7 @@ fn accepts_cow(s: Cow<str>) {
 
 <br><br>
 
-## Collections
+# Collections
 
 ### Can I implement data structures like vectors and linked lists efficiently in Rust?
 
@@ -439,7 +439,7 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 
 <br><br>
 
-## Ownership
+# Ownership
 
 ### How can I implement a graph or other data structure that contains cycles?
 
@@ -546,7 +546,7 @@ The most common sorts of deref coercions are:
 
 <br><br>
 
-## Lifetimes
+# Lifetimes
 
 ### Why lifetimes?
 
@@ -616,7 +616,7 @@ You can do that with the [`Option`][Option] type, which can either be `Some(T)` 
 
 <br><br>
 
-## Generics
+# Generics
 
 ### What is "monomorphisation"?
 
@@ -715,7 +715,7 @@ As explained in [the earlier question on floats](#why-cant-i-compare-floats), th
 
 <br><br>
 
-## Input / Output
+# Input / Output
 
 ### How do I read a file into a `String`?
 
@@ -757,7 +757,7 @@ If you're looking for something more powerful, there are a [number of options on
 
 <br><br>
 
-## Error Handling
+# Error Handling
 
 ### Why doesn't Rust have exceptions?
 
@@ -785,7 +785,7 @@ If you really don't want to handle an error, use [`unwrap()`][unwrap], but know 
 
 <br><br>
 
-## Concurrency
+# Concurrency
 
 ### Can I use static values across threads without an `unsafe` block?
 
@@ -795,7 +795,7 @@ More generally, if a type implements [`Sync`][Sync] and does not implement [`Dro
 
 <br><br>
 
-## Macros
+# Macros
 
 ### Can I write a macro to generate identifiers?
 
@@ -803,7 +803,7 @@ Not currently. Rust macros are ["hygienic macros"](https://en.wikipedia.org/wiki
 
 <br><br>
 
-## Debugging and Tooling
+# Debugging and Tooling
 
 ### How do I debug Rust programs?
 
@@ -823,7 +823,7 @@ There are a number of options for development environment with Rust, all of whic
 
 <br><br>
 
-## Low-Level
+# Low-Level
 
 ### How do I `memcpy` bytes?
 
@@ -860,7 +860,7 @@ The `#[repr(C)]` attribute can be applied to such `enums` to give them the same 
 
 <br><br>
 
-## Cross-Platform
+# Cross-Platform
 
 ### What's the idiomatic way to express platform-specific behavior in Rust?
 
@@ -886,7 +886,7 @@ Rust does distribute [copies of the standard library](https://static.rust-lang.o
 
 <br><br>
 
-## Modules and Crates
+# Modules and Crates
 
 ### What is the relationship between a module and a crate?
 
@@ -987,7 +987,7 @@ Quoting the [official explanation](https://internals.rust-lang.org/t/crates-io-p
 
 <br><br>
 
-## Libraries
+# Libraries
 
 ### How can I make an HTTP request?
 
@@ -1018,7 +1018,7 @@ Yes you can! The major game programming library for Rust is [Piston](http://www.
 
 <br><br>
 
-## Design Patterns
+# Design Patterns
 
 ### Is Rust object oriented?
 
@@ -1056,7 +1056,7 @@ You can approximate non-constant-expression globals with the [lazy-static](https
 
 <br><br>
 
-## Other Languages
+# Other Languages
 
 ### How can I implement something like C's `struct X { static int X; };` in Rust?
 
@@ -1302,7 +1302,7 @@ Some specific difference between Haskell typeclasses and Rust traits include:
 
 <br><br>
 
-## Documentation
+# Documentation
 
 ### Why are so many Rust answers on Stack Overflow wrong?
 
