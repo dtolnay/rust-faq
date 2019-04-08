@@ -76,12 +76,6 @@ The two biggest open source Rust projects right now are [Servo](https://github.c
 
 [A growing number of organizations!](friends.html)
 
-<!--
-### What projects are good examples of idiomatic Rust code?
-
-TODO: Write this answer.
--->
-
 ### How can I try Rust easily?
 
 The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/install.html) and go through the [Guessing Game](https://doc.rust-lang.org/stable/book/second-edition/ch02-00-guessing-game-tutorial.html) tutorial in the book.
@@ -838,18 +832,6 @@ The `#[repr(C)]` attribute can be applied to such `enums` to give them the same 
 
 ## Cross-Platform
 
-<!--
-### How do I build a Windows binary that doesn't display the console window?
-
-TODO: Write this answer.
--->
-
-<!--
-### How do I make the console-less binary not crash on panic!?
-
-TODO: Write this answer.
--->
-
 ### What's the idiomatic way to express platform-specific behavior in Rust?
 
 Platform-specific behavior can be expressed using [conditional compilation attributes](https://doc.rust-lang.org/reference/attributes.html#conditional-compilation) such as `target_os`, `target_family`, `target_endian`, etc.
@@ -953,12 +935,6 @@ If you know this is going to happen, perhaps it saves a small number of keystrok
 
 However, in the future, an IDE could help manage declarations, which gives you the best of both worlds: machine assistance for pulling in names, but explicit declarations about where those names are coming from.
 
-<!--
-### How do I package and archive crates from [https://crates.io](https://crates.io)?
-
-TODO: Write this answer.
--->
-
 ### How do I do dynamic Rust library loading?
 
 Import dynamic libraries in Rust with [libloading](https://crates.io/crates/libloading), which provides a cross-platform system for dynamic linking.
@@ -1033,22 +1009,6 @@ To define procedural constants that can't be defined via these mechanisms, use t
 ### Can I run initialization code that happens before main?
 
 Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
-
-<!--
-
-This answer needs significant work. Let's revise after the initial posting. --aturon
-
-### Why doesn't Rust have inheritance?
-
-There are two meanings for the word "inheritance": _subtyping_, and _interface sharing_. Both purposes are already handled by traits.
-
-For the first, subtyping exists for polymorphism, which traits already provide.
-
-For the second, interface sharing is handled via trait methods, which define a collection of related functions that must be implemented for any implementation of the trait.
-
-Rust has consistently worked to avoid having features with overlapping purposes, preferring to keep features orthogonal. For this reason, and given that the two major purposes are already handled by traits, Rust has opted not to include inheritance.
-
--->
 
 ### Does Rust allow non-constant-expression values for globals?
 
