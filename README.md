@@ -174,7 +174,7 @@ Secondly, the Rust compiler suffers from long-standing technical debt, and notab
 
 Thirdly, Rust's use of LLVM for code generation is a double-edged sword: while it enables Rust to have world-class runtime performance, LLVM is a large framework that is not focused on compile-time performance, particularly when working with poor-quality inputs.
 
-Finally, while Rust's preferred strategy of monomorphising generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies. Rust programmers can use trait objects to trade away this code bloat by using dynamic dispatch instead.
+Finally, while Rust's preferred strategy of monomorphizing generics (ala C++) produces fast code, it demands that significantly more code be generated than other translation strategies. Rust programmers can use trait objects to trade away this code bloat by using dynamic dispatch instead.
 
 ### Why are Rust's `HashMap`s slow?
 
@@ -621,14 +621,14 @@ You can do that with the [`Option`][Option] type, which can either be `Some(T)` 
 
 # Generics
 
-### What is "monomorphisation"?
+### What is "monomorphization"?
 
-Monomorphisation specializes each use of a generic function (or structure) with specific instance,
+Monomorphization specializes each use of a generic function (or structure) with specific instance,
 based on the parameter types of calls to that function (or uses of the structure).
 
-During monomorphisation a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
+During monomorphization a new copy of the generic function is translated for each unique set of types the function is instantiated with. This is the same strategy used by C++. It results in fast code that is specialized for every call-site and statically dispatched, with the tradeoff that functions instantiated with many different types can cause "code bloat", where multiple function instances result in larger binaries than would be created with other translation strategies.
 
-Functions that accept [trait objects](https://doc.rust-lang.org/book/ch17-02-trait-objects.html) instead of type parameters do not undergo monomorphisation. Instead, methods on the trait objects are dispatched dynamically at runtime.
+Functions that accept [trait objects](https://doc.rust-lang.org/book/ch17-02-trait-objects.html) instead of type parameters do not undergo monomorphization. Instead, methods on the trait objects are dispatched dynamically at runtime.
 
 ### What's the difference between a function and a closure that doesn't capture any variables?
 
