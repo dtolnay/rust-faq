@@ -1045,11 +1045,11 @@ Globals in Rust can be done using `const` declarations for compile-time computed
 
 Rust currently has limited support for compile time constants. You can define primitives using `const` declarations (similar to `static`, but immutable and without a specified location in memory) as well as define `const` functions and inherent methods.
 
-To define procedural constants that can't be defined via these mechanisms, use the [`lazy-static`](https://github.com/rust-lang-nursery/lazy-static.rs) crate, which emulates compile-time evaluation by automatically evaluating the constant at first use.
+To define procedural constants that can't be defined via these mechanisms, use the [`lazy-static`](https://crates.io/crates/lazy_static) crate, which emulates compile-time evaluation by automatically evaluating the constant at first use.
 
 ### Can I run initialization code that happens before main?
 
-Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy-static`](https://github.com/Kimundi/lazy-static.rs) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
+Rust has no concept of "life before `main`". The closest you'll see can be done through the [`lazy-static`](https://crates.io/crates/lazy_static) crate, which simulates a "before main" by lazily initializing static variables at their first usage.
 
 ### Does Rust allow non-constant-expression values for globals?
 
