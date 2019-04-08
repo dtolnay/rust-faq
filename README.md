@@ -752,7 +752,7 @@ For buffered reads, use the [`BufReader`][BufReader] struct, which helps to redu
 
 ### How do I do asynchronous input / output in Rust?
 
-There are several libraries providing asynchronous input / output in Rust, including [mio](https://github.com/carllerche/mio), [tokio](https://github.com/tokio-rs/tokio), [mioco](https://github.com/dpc/mioco), [coio-rs](https://github.com/zonyitoo/coio-rs), and [rotor](https://github.com/tailhook/rotor).
+There are several libraries providing asynchronous input / output in Rust, including [mio](https://github.com/carllerche/mio), [tokio](https://github.com/tokio-rs/tokio), [coio-rs](https://github.com/zonyitoo/coio-rs), and [rotor](https://github.com/tailhook/rotor).
 
 ### How do I get command line arguments in Rust?
 
