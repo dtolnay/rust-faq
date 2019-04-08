@@ -846,7 +846,7 @@ Yes! In fact there are [several projects underway doing just that](http://wiki.o
 
 ### How can I read or write numeric types like `i32` or `f64` in big-endian or little-endian format in a file or other byte stream?
 
-You should check out the [byteorder crate](http://burntsushi.net/rustdoc/byteorder/), which provides utilities for exactly that.
+You should check out the [byteorder crate](https://docs.rs/byteorder), which provides utilities for exactly that.
 
 ### Does Rust guarantee a specific data layout?
 
