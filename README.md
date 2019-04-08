@@ -1035,7 +1035,7 @@ That depends. There _are_ ways of translating object-oriented concepts like [mul
 
 ### How do I handle configuration of a struct with optional parameters?
 
-The easiest way is to use the [`Option`][Option] type in whatever function you're using to construct instances of the struct (usually `new()`). Another way is to use the [builder pattern](https://doc.rust-lang.org/stable/book/first-edition/method-syntax.html#builder-pattern), where only certain functions instantiating member variables must be called before the construction of the built type.
+The easiest way is to use the [`Option`][Option] type in whatever function you're using to construct instances of the struct (usually `new()`). Another way is to use the builder pattern, where only certain functions instantiating member variables must be called before the construction of the built type.
 
 ### How do I do global variables in Rust?
 
