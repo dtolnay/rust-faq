@@ -590,18 +590,21 @@ it explicitly. The rules are as follows:
 
 1. Within a function body, you never have to write a lifetime explicitly; the correct value
    should always be inferred.
+
 2. Within a function *signature* (for example, in the types of its
    arguments, or its return type), you *may* have to write a lifetime
    explicitly. Lifetimes there use a simple defaulting scheme called
    ["lifetime elision"](https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision),
    which consists of the following three rules:
-  - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
-  - If there is exactly one input lifetime, elided or not, that
-    lifetime is assigned to all elided lifetimes in the return values
-    of that function.
-  - If there are multiple input lifetimes, but one of them is &self
-    or &mut self, the lifetime of self is assigned to all elided
-    output lifetimes.
+
+   - Each elided lifetime in a function’s arguments becomes a distinct lifetime parameter.
+   - If there is exactly one input lifetime, elided or not, that
+     lifetime is assigned to all elided lifetimes in the return values
+     of that function.
+   - If there are multiple input lifetimes, but one of them is &self
+     or &mut self, the lifetime of self is assigned to all elided
+     output lifetimes.
+
 3. Finally, in a `struct` or `enum` definition, all lifetimes must be explicitly declared.
 
 If these rules result in compilation errors, the Rust compiler will provide an error message indicating the error caused, and suggesting a potential solution based on which step of the inference process caused the error.
