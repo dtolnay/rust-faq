@@ -1193,7 +1193,7 @@ Rust was designed from day one to be a safe systems programming language, which 
 
 ### How do I do the equivalent of C++ template specialization in Rust?
 
-Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rfcs/pull/1210) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/stable/book/second-edition/ch19-04-advanced-types.html).
+Rust doesn't currently have an exact equivalent to template specialization, but it is [being worked on](https://github.com/rust-lang/rust/issues/31844) and will hopefully be added soon. However, similar effects can be achieved via [associated types](https://doc.rust-lang.org/stable/book/second-edition/ch19-04-advanced-types.html).
 
 ### How does Rust's ownership system relate to move semantics in C++?
 
