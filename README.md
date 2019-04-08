@@ -409,7 +409,9 @@ fn accepts_cow(s: Cow<str>) {
 
 If your reason for implementing these data structures is to use them for other programs, there's no need, as efficient implementations of these data structures are provided by the standard library.
 
-If, however, [your reason is simply to learn](http://cglab.ca/~abeinges/blah/too-many-lists/book/), then you will likely need to dip into unsafe code. While these data structures _can_ be implemented entirely in safe Rust, the performance is likely to be worse than it would be with the use of unsafe code. The simple reason for this is that data structures like vectors and linked lists rely on pointer and memory operations that are disallowed in safe Rust.
+If, however, [your reason is simply to learn][book-too-many-lists], then you will likely need to dip into unsafe code. While these data structures _can_ be implemented entirely in safe Rust, the performance is likely to be worse than it would be with the use of unsafe code. The simple reason for this is that data structures like vectors and linked lists rely on pointer and memory operations that are disallowed in safe Rust.
+
+[book-too-many-lists]: https://rust-unofficial.github.io/too-many-lists/
 
 For example, a doubly-linked list requires that there be two mutable references to each node, but this violates Rust's mutable reference aliasing rules. You can solve this using [`Weak<T>`][Weak], but the performance will be poorer than you likely want. With unsafe code you can bypass the mutable reference aliasing rule restriction, but must manually verify that your code introduces no memory safety violations.
 
@@ -443,7 +445,7 @@ One thing to note is that currently Rust doesn't offer generics over arrays of d
 
 ### How can I implement a graph or other data structure that contains cycles?
 
-There are at least four options (discussed at length in [Too Many Linked Lists](http://cglab.ca/~abeinges/blah/too-many-lists/book/)):
+There are at least four options (discussed at length in [Too Many Linked Lists][book-too-many-lists]):
 
 - You can implement it using [`Rc`][Rc] and [`Weak`][Weak] to allow shared ownership of nodes,
 although this approach pays the cost of memory management.
