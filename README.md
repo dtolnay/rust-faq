@@ -716,7 +716,7 @@ There are some types in Rust whose values are only partially ordered, or have on
 
 Floating point types ([`f32`][f32] and [`f64`][f64]) are good examples of each. Any floating point type may have the value `NaN` (meaning "not a number"). `NaN` is not equal to itself (`NaN == NaN` is false), and not less than or greater than any other floating point value. As such, both [`f32`][f32] and [`f64`][f64] implement [`PartialOrd`][PartialOrd] and [`PartialEq`][PartialEq] but not [`Ord`][Ord] and not [`Eq`][Eq].
 
-As explained in [the earlier question on floats](#why-cant-i-compare-floats), these distinctions are important because some collections rely on total orderings/equality in order to give correct results.
+As explained in [the earlier question on floats](#why-cant-i-compare-floats-or-use-them-as-hashmap-or-btreemap-keys), these distinctions are important because some collections rely on total orderings/equality in order to give correct results.
 
 <br><br>
 
