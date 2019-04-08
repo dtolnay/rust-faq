@@ -81,7 +81,7 @@ The two biggest open source Rust projects right now are [Servo](https://github.c
 
 ### How can I try Rust easily?
 
-The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/tools/install) and go through the [Guessing Game](https://doc.rust-lang.org/stable/book/second-edition/ch02-00-guessing-game-tutorial.html) tutorial in the book.
+The easiest way to try Rust is through the [playpen](https://play.rust-lang.org/), an online app for writing and running Rust code. If you want to try Rust on your system, [install it](https://www.rust-lang.org/tools/install) and go through the [Guessing Game](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html) tutorial in the book.
 
 ### How do I get help with Rust issues?
 
