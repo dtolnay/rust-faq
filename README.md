@@ -8,6 +8,11 @@ This page exists to answer common questions about the Rust programming language.
 If there is some common or important question you feel is wrongly left unanswered here, please open a GitHub issue against this repository!
 </p>
 
+*Most of this content used to live in the rust-lang/rust repository, then a
+dedicated FAQ page on the website. It was dropped during the website redesign of
+late 2018. I have resurrected it here because many of these questions continue
+to be asked frequently.*
+
 <div id="toc">
     <h2>Table of Contents</h2><a href="#toggle-toc"></a>
     <div class="contents">
