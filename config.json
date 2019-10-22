@@ -1,0 +1,12 @@
+{
+    "httpHeaders": [
+        {
+            "urls": [
+                "https://crates.io"
+            ],
+            "headers": {
+                "User-Agent": "broken links checker (https://github.com/dtolnay/rust-faq)",
+            }
+        }
+    ]
+}
