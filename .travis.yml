@@ -1,0 +1,6 @@
+install:
+  - sudo apt-get install npm
+  - sudo npm install -g markdown-link-check
+
+script:
+  - sudo bash ./check_dead_links
