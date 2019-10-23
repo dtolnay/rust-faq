@@ -164,13 +164,13 @@ If you compile with `cargo`, use the `--release` flag. If you compile with `rust
 
 Code translation and optimizations. Rust provides high level abstractions that compile down into efficient machine code, and those translations take time to run, especially when optimizing.
 
-But Rust's compilation time is not as bad as it may seem, and there is reason to believe it will improve. When comparing projects of similar size between C++ and Rust, compilation time of the entire project is generally believed to be comparable. The common perception that Rust compilation is slow is in large part due to the differences in the *compilation model* between C++ and Rust: C++'s compilation unit is the file, while Rust's is the crate, composed of many files. Thus, during development, modifying a single C++ file can result in much less recompilation than in Rust. There is a major effort underway to refactor the compiler to introduce [incremental compilation](https://github.com/rust-lang/rfcs/blob/master/text/1298-incremental-compilation.md), which will provide Rust the compile time benefits of C++'s model.
+But Rust's compilation time is not as bad as it may seem, and there is reason to believe it will improve. When comparing projects of similar size between C++ and Rust, compilation time of the entire project is generally believed to be comparable. The common perception that Rust compilation is slow is in large part due to the differences in the *compilation model* between C++ and Rust: C++'s compilation unit is the file, while Rust's is the crate, composed of many files. Thus, during development, modifying a single C++ file can result in much less recompilation than in Rust. There have been a major effort underway to refactor the compiler to introduce [incremental compilation](https://github.com/rust-lang/rfcs/blob/master/text/1298-incremental-compilation.md), which provides Rust the compile time benefits of C++'s model. Now it's mostly done.
 
 Aside from the compilation model, there are several other aspects of Rust's language design and compiler implementation that affect compile-time performance.
 
 First, Rust has a moderately-complex type system, and must spend a non-negligible amount of compile time enforcing the constraints that make Rust safe at runtime.
 
-Secondly, the Rust compiler suffers from long-standing technical debt, and notably generates poor-quality LLVM IR which LLVM must spend time "fixing." The addition of a new internal representation called [MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md) to the Rust compiler offers the potential to perform more optimizations and improve the quality of LLVM IR generated, but this work has not yet occured.
+Secondly, the Rust compiler suffers from long-standing technical debt, and notably generates poor-quality LLVM IR which LLVM must spend time "fixing." The addition of a new internal representation called [MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md) to the Rust compiler offers the potential to perform more optimizations and improve the quality of LLVM IR generated.
 
 Thirdly, Rust's use of LLVM for code generation is a double-edged sword: while it enables Rust to have world-class runtime performance, LLVM is a large framework that is not focused on compile-time performance, particularly when working with poor-quality inputs.
 
@@ -403,6 +403,26 @@ fn accepts_cow(s: Cow<str>) {
 }
 ```
 
+__Using `&str`__
+
+But, to be honest, most of such use cases are "we just need `&str`". The most common in-the-wild
+example you're going to find is:
+
+```rust
+fn accepts_ref_but_actually_both(s: &str) {
+    // ... the body of the function
+}
+```
+
+A `String` can be passed to such function through a reference, just rely on `Deref`
+[as described above](#how-can-i-convert-a-string-or-vect-to-a-slice-str-and-t):
+
+```rust
+let s = String::from("owned");
+// deref will turn `&String` into `&str` automatically
+accepts_ref_but_actually_both(&s);
+```
+
 <br><br>
 
 # Collections
@@ -439,7 +459,10 @@ If you need direct access to a borrowing iterator, you can usually get it by cal
 
 You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes a fixed-size array, the compiler has to know how big that array will be.
 
-One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
+One thing to note is that currently Rust doesn't offer generics over arrays of different size
+(yet, [a great effort being put in this convey][const_generics]). If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
+
+[const_generics]: https://github.com/rust-lang/rust/issues/44580#issuecomment-544155666
 
 <br><br>
 
