@@ -128,7 +128,7 @@ This is partly due to preference of the original developer (Graydon), and partly
 
 ### How fast is Rust?
 
-Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/faster/rust.html) and [others](https://github.com/kostya/benchmarks)).
+Fast! Rust is already competitive with idiomatic C and C++ in a number of benchmarks (like the [Benchmarks Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/rust.html) and [others](https://github.com/kostya/benchmarks)).
 
 Like C++, Rust takes [zero-cost abstractions](http://blog.rust-lang.org/2015/05/11/traits.html) as one of its core principles: none of Rust's abstractions impose a global performance penalty, nor is there overhead from any runtime system in the traditional sense.
 
