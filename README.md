@@ -698,6 +698,7 @@ The following operators can be overloaded:
 | `%`                  | [`Rem`][Rem]                   |
 | `%=`                 | [`RemAssign`][RemAssign]       |
 | `&`                  | [`BitAnd`][BitAnd]             |
+| `&=`                 | [`BitAndAssign`][BitAndAssign] |
 | <code>&#124;</code>  | [`BitOr`][BitOr]               |
 | <code>&#124;=</code> | [`BitOrAssign`][BitOrAssign]   |
 | `^`                  | [`BitXor`][BitXor]             |
