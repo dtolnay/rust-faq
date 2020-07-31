@@ -194,7 +194,7 @@ Not generally, no. Tail-call optimization may be done in [limited circumstances]
 
 Not in the typical sense used by languages such as Java, but parts of the Rust standard library can be considered a "runtime", providing a heap, backtraces, unwinding, and stack guards. There is a [small amount of initialization code][rt.rs] that runs before the user's `main` function. The Rust standard library additionally links to the C standard library, which does similar [runtime initialization](http://www.embecosm.com/appnotes/ean9/html/ch05s02.html). Rust code can be compiled without the standard library, in which case the runtime is roughly equivalent to C's.
 
-[rt.rs]: https://github.com/rust-lang/rust/blob/master/src/libstd/rt.rs
+[rt.rs]: https://github.com/rust-lang/rust/blob/master/library/std/src/rt.rs
 
 <br><br>
 
