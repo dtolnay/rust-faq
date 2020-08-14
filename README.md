@@ -353,7 +353,7 @@ For a more in-depth explanation of why UTF-8 is usually preferable over UTF-16 o
 
 ### What string type should I use?
 
-Rust has four pairs of string types, [each serving a distinct purpose](http://www.suspectsemantics.com/blog/2016/03/27/string-types-in-rust/). In each pair, there is an "owned" string type, and a "slice" string type. The organization looks like this:
+Rust has four pairs of string types, each serving a distinct purpose. In each pair, there is an "owned" string type, and a "slice" string type. The organization looks like this:
 
 |               | "Slice" type | "Owned" type |
 |:--------------|:-------------|:-------------|
