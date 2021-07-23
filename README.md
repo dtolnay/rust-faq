@@ -148,7 +148,7 @@ For when single ownership does not suffice, Rust programs rely on the standard r
 We are however investigating *optional* garbage collection as a future
 extension. The goal is to enable smooth integration with
 garbage-collected runtimes, such as those offered by the
-[Spidermonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
+[Spidermonkey](https://spidermonkey.dev)
 and [V8](https://developers.google.com/v8/?hl=en) JavaScript engines.
 Finally, some people have investigated implementing
 [pure Rust garbage collectors](https://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/)
