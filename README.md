@@ -170,7 +170,7 @@ Aside from the compilation model, there are several other aspects of Rust's lang
 
 First, Rust has a moderately-complex type system, and must spend a non-negligible amount of compile time enforcing the constraints that make Rust safe at runtime.
 
-Secondly, the Rust compiler suffers from long-standing technical debt, and notably generates poor-quality LLVM IR which LLVM must spend time "fixing." The addition of a new internal representation called [MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md) to the Rust compiler offers the potential to perform more optimizations and improve the quality of LLVM IR generated, but this work has not yet occured.
+Secondly, the Rust compiler suffers from long-standing technical debt, and notably generates poor-quality LLVM IR which LLVM must spend time "fixing." The addition of a new internal representation called [MIR](https://github.com/rust-lang/rfcs/blob/master/text/1211-mir.md) to the Rust compiler offers the potential to perform more optimizations and improve the quality of LLVM IR generated.
 
 Thirdly, Rust's use of LLVM for code generation is a double-edged sword: while it enables Rust to have world-class runtime performance, LLVM is a large framework that is not focused on compile-time performance, particularly when working with poor-quality inputs.
 
