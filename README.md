@@ -441,7 +441,7 @@ If you need direct access to a borrowing iterator, you can usually get it by cal
 
 You don't necessarily have to. If you're declaring an array directly, the size is inferred based on the number of elements. But if you're declaring a function that takes a fixed-size array, the compiler has to know how big that array will be.
 
-One thing to note is that currently Rust doesn't offer generics over arrays of different size. If you'd like to accept a contiguous container of a variable number of values, use a [`Vec`][Vec] or slice (depending on whether you need ownership).
+This issue is mitigated by [const generics](https://github.com/rust-lang/rfcs/blob/master/text/2000-const-generics.md) in modern Rust, which allow you to declare functions that can operate on arrays of arbitrary size.
 
 <br><br>
 
