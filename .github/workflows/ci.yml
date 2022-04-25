@@ -10,6 +10,6 @@ jobs:
     name: Link Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: sudo npm install -g markdown-link-check
       - run: markdown-link-check README.md -c link-check.json
